@@ -1,7 +1,5 @@
-/*
- * Create a list that holds all of your cards
- */
-
+//Array of cards
+const cards = [...cards]
 
 /*
  * Display the cards on the page
