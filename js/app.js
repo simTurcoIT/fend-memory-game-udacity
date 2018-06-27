@@ -27,8 +27,8 @@ function newGame() {
 	cards = shuffle(cards);
 //Loop of the cards 
 for(let = i; i < cards.length; i++){
-	deck.innerHTML= '';
-  } 
+	bundle.innerHTML= '';
+  };
 }
 
 /*
