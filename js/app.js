@@ -1,5 +1,5 @@
 //Array of cards
-let card = document.getElementsByClassNamme("card");
+let card = document.getElementsByClassName("card");
 let cards = [...card];
 
 
@@ -17,6 +17,9 @@ function shuffle(array) {
 
     return array;
 }
+
+//Pick all the cards in the deck
+const bundle = document.querySelector(".deck");
 
 
 
