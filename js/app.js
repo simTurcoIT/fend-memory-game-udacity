@@ -22,6 +22,14 @@ function shuffle(array) {
 const bundle = document.querySelector(".deck");
 
 
+//Start the game 
+function newGame() {
+	cards = shuffle(cards);
+//Loop of the cards 
+for(let = i; i < cards.length; i++){
+	deck.innerHTML= '';
+  } 
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
