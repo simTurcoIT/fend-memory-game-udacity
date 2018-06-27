@@ -1,6 +1,5 @@
 //Array of cards
-let card = document.getElementsByClassName("card");
-let cards = [...card];
+let cards = ["fa fa-diamond", "fa fa-diamond", "fa fa-anchor", "fa fa-anchor", "fa fa-paper-plane-o", "fa fa-paper-plane-o", "fa fa-cube", "fa fa-cube", "fa fa-bolt", "fa fa-bolt", "fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"];
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -18,18 +17,18 @@ function shuffle(array) {
     return array;
 }
 
-//Pick all the cards in the deck
+//Select the deck
 const bundle = document.querySelector(".deck");
 
 
-//Start the game 
-function newGame() {
-	cards = shuffle(cards);
-//Loop of the cards 
-for(let = i; i < cards.length; i++){
-	bundle.innerHTML= '';
-  };
-}
+//Creation of the cards 
+for(let i = 0; i < cards.length; i++){
+	const card = document.createElement("li"); 
+	card.classList.add("card");
+	card.innerHTML= `<i class="${cards[i]}"</i>`;
+	bundle.appendChild(card);
+  }
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
