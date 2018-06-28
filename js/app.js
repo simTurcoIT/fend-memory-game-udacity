@@ -26,7 +26,7 @@ function shuffle(array) {
 //Select the deck
 const bundle = document.querySelector(".deck");
 
-
+shuffle(cards);
 //Creation of the cards 
 for(let i = 0; i < cards.length; i++){
 	const card = document.createElement("li"); 
@@ -51,7 +51,11 @@ for(let i = 0; i < cards.length; i++){
     	  	cardOne.classList.add("match");
     	  	cardTwo.classList.add("match");
 
+    	  	matchedCards.push(cardOne, cardTwo);
+
     	  	openedCards = [];//reset the array
+
+            gameEnd();
 
     	  } else { //if the cards don't match, we remove classes
             cardOne.classList.remove("open", "show");
@@ -66,5 +70,11 @@ for(let i = 0; i < cards.length; i++){
     	openedCards.push(this); 
     	}
 
-    })
+    });
   }
+
+function gameEnd() {
+	if(matchedCards.length === cards.length){
+		alert("tua mamma")
+	}
+}
