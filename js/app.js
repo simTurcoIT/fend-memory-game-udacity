@@ -26,15 +26,22 @@ function shuffle(array) {
 //Select the deck
 const bundle = document.querySelector(".deck");
 
+function startGame(){
+//shuffle cards
 shuffle(cards);
+
 //Creation of the cards 
 for(let i = 0; i < cards.length; i++){
 	const card = document.createElement("li"); 
 	card.classList.add("card");
 	card.innerHTML= `<i class="${cards[i]}"</i>`;
 	bundle.appendChild(card);
+	event(card);
+}  
     
-    //card event
+    //click event for each card
+    function event(card){
+    
     card.addEventListener('click', function(){
     		
     		const cardOne = this;
@@ -58,11 +65,14 @@ for(let i = 0; i < cards.length; i++){
             gameEnd();
 
     	  } else { //if the cards don't match, we remove classes
+    	    
+    	    setTimeout(function(){
             cardOne.classList.remove("open", "show");
             cardTwo.classList.remove("open", "show");
-
             openedCards = [];
-    	  }
+        }, 300);
+
+    	}
 
     	} else {
 
@@ -71,10 +81,13 @@ for(let i = 0; i < cards.length; i++){
     	}
 
     });
+    }
   }
 
 function gameEnd() {
 	if(matchedCards.length === cards.length){
-		alert("tua mamma")
+		alert("tua mamma");
 	}
 }
+
+startGame();
