@@ -55,8 +55,8 @@ for(let i = 0; i < cards.length; i++){
 
     	  //compare the cards 
            if(cardOne.innerHTML === cardTwo.innerHTML) {
-            cardOne.classList.add("match", "disable");
-            cardTwo.classList.add("match", "disable");
+            cardOne.classList.add("match");
+            cardTwo.classList.add("match");
 
             matchedCards.push(cardOne, cardTwo);
 
