@@ -7,9 +7,6 @@ let openedCards = [];
 //Array of the matched cards 
 let matchedCards = [];
 
-//Restart Button
-const resetButton = document.querySelector(".restart");
-
 //Select the deck
 const bundle = document.querySelector(".deck");
 
@@ -28,9 +25,9 @@ function shuffle(array) {
     return array;
 }
 
-function ciao() {
+function newBoard() {
     location.reload();
-}
+};
 
 
 
