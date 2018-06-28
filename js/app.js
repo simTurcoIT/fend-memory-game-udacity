@@ -28,8 +28,13 @@ function shuffle(array) {
     return array;
 }
 
+function ciao() {
+    location.reload();
+}
 
-function startGame(){
+
+
+function newGame(){
 //shuffle cards
 shuffle(cards);
 
@@ -92,5 +97,5 @@ function gameEnd() {
 	}
 }
 
-startGame();
+newGame();
 
