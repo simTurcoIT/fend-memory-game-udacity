@@ -7,6 +7,11 @@ let openedCards = [];
 //Array of the matched cards 
 let matchedCards = [];
 
+//Restart Button
+const resetButton = document.querySelector(".restart");
+
+//Select the deck
+const bundle = document.querySelector(".deck");
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -23,8 +28,6 @@ function shuffle(array) {
     return array;
 }
 
-//Select the deck
-const bundle = document.querySelector(".deck");
 
 function startGame(){
 //shuffle cards
@@ -80,7 +83,7 @@ for(let i = 0; i < cards.length; i++){
     	}
 
     });
- }
+  }
 }
 
 function gameEnd() {
@@ -90,3 +93,4 @@ function gameEnd() {
 }
 
 startGame();
+
