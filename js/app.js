@@ -7,6 +7,10 @@ let openedCards = [];
 //Array of the matched cards 
 let matchedCards = [];
 
+//Moves
+let moves = 0;
+const moveCount = document.querySelector(".moves");
+
 //Select the deck
 const bundle = document.querySelector(".deck");
 
@@ -25,6 +29,7 @@ function shuffle(array) {
     return array;
 }
 
+//Function to refresh the page
 function newBoard() {
     location.reload();
 };
@@ -37,28 +42,27 @@ shuffle(cards);
 
 //Creation of the cards 
 for(let i = 0; i < cards.length; i++){
-	const card = document.createElement("li"); 
-	card.classList.add("card");
-	card.innerHTML= `<i class="${cards[i]}"</i>`;
-	bundle.appendChild(card);
-	event(card);
+    const card = document.createElement("li"); 
+    card.classList.add("card");
+    card.innerHTML= `<i class="${cards[i]}"</i>`;
+    bundle.appendChild(card);
+    event(card);
   }  
 
     //click event for each card
     function event(card){
     
     card.addEventListener('click', function(){
-    		
-    		const cardOne = this;
-    		const cardTwo = openedCards[0];
+            
+            const cardOne = this;
+            const cardTwo = openedCards[0];
 
-    	if(openedCards.length === 1){
+        if(openedCards.length === 1){
 
-    		card.classList.add("open", "show", "disable");
-    	    openedCards.push(this); //the opened cards go in the empty array
-    		
-
-    	  //compare the cards 
+            card.classList.add("open", "show", "disable");
+            openedCards.push(this); //the opened cards go in the empty array
+            
+          //compare the cards 
            if(cardOne.innerHTML === cardTwo.innerHTML) {
             cardOne.classList.add("match");
             cardTwo.classList.add("match");
@@ -77,21 +81,28 @@ for(let i = 0; i < cards.length; i++){
             openedCards = [];
         }, 300);
     }
-
-    	} else {
-
-    	cardOne.classList.add("open", "show", "disable");
-    	openedCards.push(this); 
-    	}
-
+        } else {
+        
+        cardOne.classList.add("open", "show", "disable");
+        openedCards.push(this); 
+        }
+  //Move counter
+  addMove();
     });
   }
 }
 
 function gameEnd() {
-	if(matchedCards.length === cards.length){
-		alert("tua mamma");
-	}
+    if(matchedCards.length === cards.length){
+        setTimeout(function(){
+        alert("tua mamma");
+     }, 325);            
+    }
+};
+
+function addMove(){
+    moves++;
+    moveCount.innerHTML= moves;
 }
 
 newGame();
