@@ -11,6 +11,9 @@ let matchedCards = [];
 let moves = 0;
 const moveCount = document.querySelector(".moves");
 
+//Rating
+const starsPanel = document.querySelector(".stars");
+
 //Select the deck
 const bundle = document.querySelector(".deck");
 
@@ -78,8 +81,8 @@ for(let i = 0; i < cards.length; i++){
             setTimeout(function(){
             cardOne.classList.remove("open", "show", "disable");
             cardTwo.classList.remove("open", "show", "disable");
-            openedCards = [];
         }, 300);
+            openedCards = [];
     }
         } else {
         
@@ -100,9 +103,27 @@ function gameEnd() {
     }
 };
 
+function removeStars(){
+    switch(moves) {
+        case 20: 
+        starsPanel.innerHTML= `<li><i class="fa fa-star" id="stella1"></i></li>
+                <li><i class="fa fa-star" id="stella2"></i></li>
+                <li><i class="fa fa-star" id="stella3"></i></li>`;
+                break;
+        case 21:
+        starsPanel.innerHTML= `<li><i class="fa fa-star" id="stella1"></i></li>
+                <li><i class="fa fa-star" id="stella2"></i></li>`;
+                break;
+        case 25: 
+        starsPanel.innerHTML = `<li><i class="fa fa-star" id="stella1"></i></li>`;
+        break;
+    };
+}
+
 function addMove(){
     moves++;
     moveCount.innerHTML= moves;
+    removeStars();
 }
 
 newGame();
