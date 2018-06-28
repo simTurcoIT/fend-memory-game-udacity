@@ -37,8 +37,8 @@ for(let i = 0; i < cards.length; i++){
 	card.innerHTML= `<i class="${cards[i]}"</i>`;
 	bundle.appendChild(card);
 	event(card);
-}  
-    
+  }  
+}
     //click event for each card
     function event(card){
     
@@ -54,7 +54,20 @@ for(let i = 0; i < cards.length; i++){
     		
 
     	  //compare the cards 
-    	  if(cardOne.innerHTML === cardTwo.innerHTML) {
+          check(cardOne, cardTwo);
+
+    	} else {
+
+    	cardOne.classList.add("open", "show");
+    	openedCards.push(this); 
+    	}
+
+    });
+}
+
+function check(cardOne, cardTwo){
+
+	    	if(cardOne.innerHTML === cardTwo.innerHTML) {
     	  	cardOne.classList.add("match");
     	  	cardTwo.classList.add("match");
 
@@ -71,18 +84,8 @@ for(let i = 0; i < cards.length; i++){
             cardTwo.classList.remove("open", "show");
             openedCards = [];
         }, 300);
-
     	}
-
-    	} else {
-
-    	cardOne.classList.add("open", "show");
-    	openedCards.push(this); 
-    	}
-
-    });
-    }
-  }
+}
 
 function gameEnd() {
 	if(matchedCards.length === cards.length){
