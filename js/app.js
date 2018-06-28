@@ -49,14 +49,14 @@ for(let i = 0; i < cards.length; i++){
 
     	if(openedCards.length === 1){
 
-    		card.classList.add("open", "show");
+    		card.classList.add("open", "show", "disable");
     	    openedCards.push(this); //the opened cards go in the empty array
     		
 
     	  //compare the cards 
            if(cardOne.innerHTML === cardTwo.innerHTML) {
-            cardOne.classList.add("match");
-            cardTwo.classList.add("match");
+            cardOne.classList.add("match", "disable");
+            cardTwo.classList.add("match", "disable");
 
             matchedCards.push(cardOne, cardTwo);
 
@@ -67,21 +67,22 @@ for(let i = 0; i < cards.length; i++){
           } else { //if the cards don't match, we remove classes
             
             setTimeout(function(){
-            cardOne.classList.remove("open", "show");
-            cardTwo.classList.remove("open", "show");
+            cardOne.classList.remove("open", "show", "disable");
+            cardTwo.classList.remove("open", "show", "disable");
             openedCards = [];
         }, 300);
     }
 
     	} else {
 
-    	cardOne.classList.add("open", "show");
+    	cardOne.classList.add("open", "show", "disable");
     	openedCards.push(this); 
     	}
 
     });
  }
 }
+
 function gameEnd() {
 	if(matchedCards.length === cards.length){
 		alert("tua mamma");
