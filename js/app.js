@@ -38,7 +38,7 @@ for(let i = 0; i < cards.length; i++){
 	bundle.appendChild(card);
 	event(card);
   }  
-}
+
     //click event for each card
     function event(card){
     
@@ -54,7 +54,24 @@ for(let i = 0; i < cards.length; i++){
     		
 
     	  //compare the cards 
-          check(cardOne, cardTwo);
+           if(cardOne.innerHTML === cardTwo.innerHTML) {
+            cardOne.classList.add("match");
+            cardTwo.classList.add("match");
+
+            matchedCards.push(cardOne, cardTwo);
+
+            openedCards = [];//reset the array
+
+            gameEnd();
+
+          } else { //if the cards don't match, we remove classes
+            
+            setTimeout(function(){
+            cardOne.classList.remove("open", "show");
+            cardTwo.classList.remove("open", "show");
+            openedCards = [];
+        }, 300);
+    }
 
     	} else {
 
@@ -63,30 +80,8 @@ for(let i = 0; i < cards.length; i++){
     	}
 
     });
+ }
 }
-
-function check(cardOne, cardTwo){
-
-	    	if(cardOne.innerHTML === cardTwo.innerHTML) {
-    	  	cardOne.classList.add("match");
-    	  	cardTwo.classList.add("match");
-
-    	  	matchedCards.push(cardOne, cardTwo);
-
-    	  	openedCards = [];//reset the array
-
-            gameEnd();
-
-    	  } else { //if the cards don't match, we remove classes
-    	    
-    	    setTimeout(function(){
-            cardOne.classList.remove("open", "show");
-            cardTwo.classList.remove("open", "show");
-            openedCards = [];
-        }, 300);
-    	}
-}
-
 function gameEnd() {
 	if(matchedCards.length === cards.length){
 		alert("tua mamma");
