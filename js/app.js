@@ -14,6 +14,11 @@ const moveCount = document.querySelector(".moves");
 //Rating
 const starsPanel = document.querySelector(".stars");
 
+//Timing variables
+var timer = document.querySelector("#timer");
+var second = 0; minute = 0; hour = 0; 
+var interval;
+
 //Select the deck
 const bundle = document.querySelector(".deck");
 
@@ -120,11 +125,24 @@ function removeStars(){
     };
 }
 
+function startTimer(){
+    interval = setInterval(function(){
+        timer.innerHTML= minute
+    })
+}
+
 function addMove(){
     moves++;
     moveCount.innerHTML= moves;
+  if(moves == 1){
+        second = 0;
+        minute = 0; 
+        hour = 0;
+    startTimer();
     removeStars();
 }
+};
+
 
 newGame();
 

@@ -108,6 +108,11 @@ h1 {
     display: inline-block;
 }
 
+#timer {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
 #stella1 {
     color: red;
 }
