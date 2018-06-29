@@ -20,7 +20,10 @@ var second = 0; minute = 0; hour = 0;
 var interval;
 
 //Modal
-
+const modal = document.querySelector(".modal");
+const totalMoves = document.getElementById("totalMoves");
+const totalStars = document.getElementById("totalStars");
+const totalTime = document.getElementById("totalTime");
 
 //Select the deck
 const bundle = document.querySelector(".deck");
@@ -106,16 +109,16 @@ for(let i = 0; i < cards.length; i++){
 
 function removeStars(){
     switch(moves) {
-        case 20: 
+        case 25: 
         starsPanel.innerHTML= `<li><i class="fa fa-star" id="stella1"></i></li>
                 <li><i class="fa fa-star" id="stella2"></i></li>
                 <li><i class="fa fa-star" id="stella3"></i></li>`;
                 break;
-        case 21:
+        case 26:
         starsPanel.innerHTML= `<li><i class="fa fa-star" id="stella1"></i></li>
                 <li><i class="fa fa-star" id="stella2"></i></li>`;
                 break;
-        case 25: 
+        case 31: 
         starsPanel.innerHTML = `<li><i class="fa fa-star" id="stella1"></i></li>`;
         break;
     };
@@ -152,12 +155,20 @@ function addMove(){
 function gameEnd() {
     if(matchedCards.length === cards.length){
         clearInterval(interval);
-        setTimeout(function(){
-        alert("tua mamma");
-     }, 325);            
-    }
+        finalTime = timer.innerHTML;
+        modal.classList.add("show");
+        const starRating = document.querySelector(".stars").innerHTML;
+        totalMoves.innerHTML = moves;
+        totalStars.innerHTML = starRating;
+        totalTime.innerHTML = finalTime;          
+  }
 };
 
 newGame();
+
+
+
+
+
 
 
