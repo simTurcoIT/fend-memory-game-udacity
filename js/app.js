@@ -127,20 +127,30 @@ function removeStars(){
 
 function startTimer(){
     interval = setInterval(function(){
-        timer.innerHTML= minute
-    })
+        timer.innerHTML= minute+ " : "+second;
+        second++;
+        if(second == 60) {
+            minute++;
+            second=0;
+        }
+        if (minute == 60){
+            hour++;
+            minute = 0;
+        }
+    }, 1000);
 }
 
 function addMove(){
     moves++;
     moveCount.innerHTML= moves;
+    removeStars();
+
   if(moves == 1){
         second = 0;
         minute = 0; 
         hour = 0;
     startTimer();
-    removeStars();
-}
+   }
 };
 
 
