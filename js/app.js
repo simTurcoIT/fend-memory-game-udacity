@@ -37,7 +37,7 @@ function shuffle(array) {
     return array;
 }
 
-//Function to refresh the page
+//Function to refresh the page everytime
 function newBoard() {
     location.reload();
 };
@@ -102,6 +102,7 @@ for(let i = 0; i < cards.length; i++){
 
 function gameEnd() {
     if(matchedCards.length === cards.length){
+        clearInterval(interval);
         setTimeout(function(){
         alert("tua mamma");
      }, 325);            
@@ -153,6 +154,6 @@ function addMove(){
    }
 };
 
-
 newGame();
+
 
