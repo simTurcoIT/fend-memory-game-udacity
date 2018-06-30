@@ -147,7 +147,7 @@ function addMove(){
     moves++;
     moveCount.innerHTML= moves;
     removeStars();
-  if(moves == 1){
+  if(moves === 1){
         second = 0;
         minute = 0; 
         hour = 0;
