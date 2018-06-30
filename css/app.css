@@ -142,5 +142,22 @@ h1 {
 }
 
 .modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ff9999;
+    transition: all 4s ease-in-out;
     visibility: hidden;
+}
+
+#popup {
+    margin: 60px auto;
+    padding: 20px;
+    background: #ff3333;
+    border-radius: 4px;
+    width: 80%;
+    position: relative;
+    transition: all 4s ease-in-out; 
 }

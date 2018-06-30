@@ -98,7 +98,6 @@ for(let i = 0; i < cards.length; i++){
             cardTwo.classList.remove("open", "show", "unmatch", "disable");
             }, 500);
             openedCards = [];
-
     }
         } else {
         
@@ -148,7 +147,6 @@ function addMove(){
     moves++;
     moveCount.innerHTML= moves;
     removeStars();
-
   if(moves == 1){
         second = 0;
         minute = 0; 
