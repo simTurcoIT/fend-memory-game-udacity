@@ -189,6 +189,10 @@ h1 {
     }
     .score-panel {
        text-align: left;
+       font-size: 20px;
+    }
+    h1 {
+        font-size: 35px;
     }
 }
 
@@ -202,6 +206,13 @@ h1 {
         height: 80px;
         width: 80px;
     }
+    .score-panel {
+       text-align: left;
+       font-size: 20px;
+    }
+    h1 {
+        font-size: 40px;
+    }
 }
 
 @media screen and (min-width: 900px) {
@@ -214,6 +225,13 @@ h1 {
     .deck .card {
         height: 125px;
         width: 125px;
+    }
+    .score-panel {
+       text-align: left;
+       font-size: 25px;
+    }
+    h1 {
+        font-size: 50px;
     }
 }
 
