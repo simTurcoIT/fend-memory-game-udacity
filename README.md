@@ -4,7 +4,7 @@ Third Project for Udacity FEND
 
 ## How to start
 
-There are 16 cards, click one of them and start the magic! :) 
+There are 16 cards, click one of them and start the magic!
 
 ## Preview
 
