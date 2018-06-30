@@ -176,8 +176,46 @@ h1 {
 }
 
 /*Responsive*/
-@media all and (){}
+@media screen and (min-width: 320px) {
+    .deck {
+        padding: 32px;
+        min-height: 290px;
+        width: 270px;
+    }
 
-@media all and(){}
+    .deck .card {
+        height: 50px;
+        width: 50px;
+    }
+    .score-panel {
+       text-align: left;
+    }
+}
 
-@media all and(){}
+@media screen and (min-width: 520px) {
+    .deck {
+        min-height: 480px;
+        width: 450px;
+    }
+
+    .deck .card {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .deck {
+        padding: 32px;
+        width: 660px;
+        min-height: 680px;
+    }
+
+    .deck .card {
+        height: 125px;
+        width: 125px;
+    }
+}
+
+
+
