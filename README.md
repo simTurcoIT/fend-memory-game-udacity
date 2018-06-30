@@ -4,7 +4,8 @@ Third Project for Udacity FEND
 
 ## How to start
 
-There are 16 cards, click one of them and let the magic happens!
+There are 16 cards, click one of them and let the magic happens! 
+Try it ![Here](https://simturcoit.github.io/fend-memory-game-udacity/)
 
 ## Preview
 
