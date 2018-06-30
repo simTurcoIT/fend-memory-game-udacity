@@ -43,7 +43,7 @@ function shuffle(array) {
     return array;
 }
 
-//Function to refresh the page everytime
+//Function to refresh the page everytime, I found it in www.w3schools.com
 function newBoard() {
     location.reload();
 };
