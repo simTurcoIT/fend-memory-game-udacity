@@ -64,7 +64,7 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-    color: yellow;
+    color: blue;
 }
 
 .deck .card.open {
@@ -79,12 +79,18 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: lime;
     font-size: 33px;
 }
 
 .deck .card.disable {
     pointer-events: none;
+}
+
+.deck .card.unmatch {
+    cursor: default;
+    background: red;
+    font-size: 33px;
 }
 
 /*
@@ -109,6 +115,11 @@ h1 {
     display: inline-block;
 }
 
+#totalStars {
+    list-style: none;
+    display: inline-block;
+}
+
 #timer {
     display: inline-block;
     margin: 0 1rem;
@@ -123,9 +134,13 @@ h1 {
 }
 
 #stella3 {
-    color: lime;
+    color: yellow;
 }
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.modal {
+    visibility: hidden;
 }

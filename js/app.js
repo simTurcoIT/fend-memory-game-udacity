@@ -90,10 +90,15 @@ for(let i = 0; i < cards.length; i++){
           } else { //if the cards don't match, we remove classes
             
             setTimeout(function(){
-            cardOne.classList.remove("open", "show", "disable");
-            cardTwo.classList.remove("open", "show", "disable");
-        }, 300);
+            cardOne.classList.add("unmatch");
+            cardTwo.classList.add("unmatch");
+        }, 150);
+            setTimeout(function(){
+            cardOne.classList.remove("open", "show", "unmatch", "disable");
+            cardTwo.classList.remove("open", "show", "unmatch", "disable");
+            }, 500);
             openedCards = [];
+
     }
         } else {
         
@@ -109,16 +114,16 @@ for(let i = 0; i < cards.length; i++){
 
 function removeStars(){
     switch(moves) {
-        case 25: 
+        case 29: 
         starsPanel.innerHTML= `<li><i class="fa fa-star" id="stella1"></i></li>
                 <li><i class="fa fa-star" id="stella2"></i></li>
                 <li><i class="fa fa-star" id="stella3"></i></li>`;
                 break;
-        case 26:
+        case 30:
         starsPanel.innerHTML= `<li><i class="fa fa-star" id="stella1"></i></li>
                 <li><i class="fa fa-star" id="stella2"></i></li>`;
                 break;
-        case 31: 
+        case 35: 
         starsPanel.innerHTML = `<li><i class="fa fa-star" id="stella1"></i></li>`;
         break;
     };
@@ -126,7 +131,7 @@ function removeStars(){
 
 function startTimer(){
     interval = setInterval(function(){
-        timer.innerHTML= minute+ " : "+second;
+        timer.innerHTML= minute+ ":"+second;
         second++;
         if(second == 60) {
             minute++;
@@ -156,9 +161,9 @@ function gameEnd() {
     if(matchedCards.length === cards.length){
         clearInterval(interval);
         finalTime = timer.innerHTML;
-        modal.classList.add("show");
+        modal.style.visibility= "visible";
         const starRating = document.querySelector(".stars").innerHTML;
-        totalMoves.innerHTML = moves;
+        totalMoves.innerHTML = moves + 1;
         totalStars.innerHTML = starRating;
         totalTime.innerHTML = finalTime;          
   }
