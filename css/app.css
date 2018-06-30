@@ -115,8 +115,7 @@ h1 {
     display: inline-block;
 }
 
-#totalStars {
-    list-style: none;
+#totalStars li { 
     display: inline-block;
 }
 
@@ -148,7 +147,7 @@ h1 {
     left: 0;
     right: 0;
     background: #ff9999;
-    transition: all 4s ease-in-out;
+    transition: opacity 4s;
     visibility: hidden;
 }
 
@@ -157,6 +156,7 @@ h1 {
     padding: 20px;
     background: #ff3333;
     border-radius: 4px;
+    border-color: blue
     width: 80%;
     position: relative;
     transition: all 4s ease-in-out; 
